@@ -1,0 +1,30 @@
+//FUNCTION test if a word is a palandrom
+FUNCTION pal(ch:STRING;var n):BOOLEAN
+VAR
+  i:integer;
+BEGIN
+  i:=0;
+  // stopig test 
+  if(n==0)then
+  RETURN true ;
+  // false test
+  ELSE
+IF (ch[i]<>ch[n]) then
+ RETURN false
+ // functoin recall
+  ELSE
+   i:=i+1;
+RETURN pal(ch,n-1)
+END_IF
+END
+//main program
+ALGORITHM palindrom
+VAR
+    ch:STRING[];
+    n:integer;
+BEGIN
+    write("put a word to test");
+    read(ch);
+    n:=ch.length-1;
+ pal(ch,n)
+END
